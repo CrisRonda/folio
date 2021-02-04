@@ -10,6 +10,7 @@ import { useIntl } from "react-intl";
 import FabNavigation from "../../components/molecules/FabNavigation";
 import styled, { css } from "styled-components";
 import { useEffect, useState } from "react";
+import Infinity from "./Infinity";
 
 const About = () => {
   const [black, setBlack] = useState(false);
@@ -25,17 +26,24 @@ const About = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Box style={{ zIndex: 1 }}>
-          <StaggerWrap childrenDelay={0.2} ease="backInOut">
-            <FadeInUpBox yOffset={64} duration={1}>
-              {f({ id: "about.title" })}
+        <Box style={{ zIndex: 1, maxWidth: "80%", color: "white" }}>
+          <StaggerWrap childrenDelay={6} ease="backInOut">
+            <FadeInUpBox yOffset={64} duration={2}>
+              <Typography fontSize={6} style={{ wordBreak: "break-word" }}>
+                {f({ id: "about.title" })}
+              </Typography>
             </FadeInUpBox>
-            <FadeInUpBox yOffset={48} duration={1}>
+            <FadeInUpBox yOffset={48} duration={3}>
               <Typography
-                fontSize={[4, null, 5]}
-                style={{ wordBreak: "break-word" }}
+                fontSize={3}
+                lineHeight={3}
+                style={{ wordBreak: "break-word", textAlign: "justify" }}
               >
                 {f({ id: "about.description" })}
+                <br />
+                {f({ id: "about.description1" })}
+                <br />
+                {f({ id: "about.description2" })}
               </Typography>
             </FadeInUpBox>
           </StaggerWrap>
@@ -54,6 +62,9 @@ const About = () => {
         href="/folio"
         light
       />
+      <div style={{ position: "absolute", top: 0, left: 0, width: "100%" }}>
+        <Infinity />
+      </div>
     </Container>
   );
 };

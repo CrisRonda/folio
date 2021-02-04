@@ -19,7 +19,7 @@ const Fab = styled(Box)`
     light
       ? css`
           /* background-color: ${theme.colors.textTitleInverse}; */
-          color: ${theme.colors.link};
+          color: white;
         `
       : css`
           /* background-color: ${theme.colors.link}; */
