@@ -1,4 +1,4 @@
-const breakpoints = [288, 608, 1024, 1504];
+const breakpoints = [480, 608, 1024, 1504];
 import { useState, useEffect } from "react";
 
 const useWindowSize = () => {

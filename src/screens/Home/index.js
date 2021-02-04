@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { picsList } from "../../utils/list";
 import {
   Box,
@@ -13,7 +13,8 @@ import { rand } from "../../utils";
 import TechPick from "./atoms/TechPick";
 import { useIntl } from "react-intl";
 import useMediaQuery from "../../hooks/useMediaQuery";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 const MainHeading = styled(Typography)``;
 MainHeading.defaultProps = {
@@ -25,10 +26,20 @@ MainHeading.defaultProps = {
 };
 
 const Home = () => {
+  const [black, setBlack] = useState(true);
+
   const { formatMessage: f } = useIntl();
   const [data, setData] = useState(picsList);
   const { isSM } = useMediaQuery();
-
+  const constraintsRef = useRef(null);
+  const config = {
+    type: "spring",
+    damping: 100,
+    stiffness: 100,
+  };
+  useEffect(() => {
+    setBlack(false);
+  }, []);
   useEffect(() => {
     if (isSM) {
       const filter = picsList.filter((i) => i !== null);
@@ -39,7 +50,7 @@ const Home = () => {
   }, [isSM]);
 
   return (
-    <Box>
+    <Container black={black}>
       <Flex
         flexDirection="column"
         height={"calc(100vh - 64px)"}
@@ -48,19 +59,45 @@ const Home = () => {
       >
         <Box style={{ zIndex: 1 }}>
           <StaggerWrap childrenDelay={0.2} ease="backInOut">
-            <MainHeading mt={1} mb={["20px", null, "30px", "40px"]}>
-              <FadeInUpBox yOffset={64} duration={1}>
-                Cristian Ronda
+            <motion.div
+              drag
+              dragConstraints={constraintsRef}
+              dragConstraints={{ left: 0, right: 0, bottom: 12 }}
+              dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+              dragElastic={0.5}
+              whileTap={{ cursor: "grabbing" }}
+              transition={config}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ x: 0, opacity: 0 }}
+            >
+              <MainHeading mt={1} mb={["20px", null, "30px", "40px"]}>
+                <FadeInUpBox yOffset={64} duration={1}>
+                  Cristian Ronda
+                </FadeInUpBox>
+              </MainHeading>
+            </motion.div>
+            <motion.div
+              drag
+              dragConstraints={constraintsRef}
+              dragConstraints={{ left: 0, right: 0, bottom: 10 }}
+              dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+              dragElastic={0.5}
+              whileTap={{ cursor: "grabbing" }}
+              transition={config}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ x: 0, opacity: 0 }}
+            >
+              <FadeInUpBox yOffset={48} duration={1}>
+                <Typography
+                  fontSize={[4, null, 5]}
+                  style={{ wordBreak: "break-word" }}
+                >
+                  {f({ id: "welcome" })}
+                </Typography>
               </FadeInUpBox>
-            </MainHeading>
-            <FadeInUpBox yOffset={48} duration={1}>
-              <Typography
-                fontSize={[4, null, 5]}
-                style={{ wordBreak: "break-word" }}
-              >
-                {f({ id: "welcome" })}
-              </Typography>
-            </FadeInUpBox>
+            </motion.div>
           </StaggerWrap>
         </Box>
       </Flex>
@@ -68,19 +105,54 @@ const Home = () => {
         <GridTemplate>
           {data.map((item, key) =>
             item !== null ? (
-              <Box key={key} pt={key % 2 === 0 ? 4 : 0} textAlign="center">
-                <ScaleBox duration={1} delayOrder={rand(1, 12)}>
-                  <TechPick src={item.src} alt={item.alt} />
-                </ScaleBox>
-              </Box>
+              <motion.div
+                key={key}
+                drag
+                dragConstraints={constraintsRef}
+                dragConstraints={{ left: 0, right: 0, bottom: 12 }}
+                transition={config}
+                dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+                dragElastic={0.5}
+                whileTap={{ cursor: "grabbing" }}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ x: 0, opacity: 0 }}
+              >
+                <Box pt={key % 2 === 0 ? 4 : 0} textAlign="center">
+                  <ScaleBox duration={1} delayOrder={rand(1, 12)}>
+                    <TechPick src={item.src} alt={item.alt} />
+                  </ScaleBox>
+
+                  <motion.div
+                    style={{
+                      background: "rgba(0,0,0,.05)",
+                      height: 10,
+                      width: 10,
+                      borderRadius: "50%",
+                    }}
+                  />
+                </Box>
+              </motion.div>
             ) : (
               <Box key={key} />
             )
           )}
         </GridTemplate>
       </Flex>
-    </Box>
+    </Container>
   );
 };
+const Container = styled(Box)`
+  transition: all 0.3s ease-in;
+  height: 100vh;
+  ${({ black }) =>
+    black
+      ? css`
+          background-color: black;
+        `
+      : css`
+          background-color: white;
+        `}
+`;
 
 export default Home;

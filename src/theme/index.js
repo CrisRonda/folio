@@ -1,4 +1,4 @@
-export const breakpoints = ["288px", "608px", "1024px", "1504px"];
+export const breakpoints = ["480px", "608px", "1024px", "1504px"];
 
 // breakpoints.xs = breakpoints[0];
 // breakpoints.s = breakpoints[1];
@@ -21,7 +21,7 @@ const colors = {
   button200: "#339989", // zomp / greenish
 
   brand: "#2d2dff",
-  link: "#2d2dff",
+  link: "#77779f",
   text: "#545469",
   subText: "#777792",
   textTitle: "#77779f",
