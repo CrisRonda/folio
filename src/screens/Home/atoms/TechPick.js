@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Img } from "../../../components";
 const TechPick = styled(Img)`
-  /* box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.25); */
   object-fit: contain;
   transition: all 0.3s ease-in-out;
   &:hover {

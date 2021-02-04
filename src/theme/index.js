@@ -1,4 +1,4 @@
-const breakpoints = ["288px", "608px", "1024px", "1504px"];
+export const breakpoints = ["288px", "608px", "1024px", "1504px"];
 
 // breakpoints.xs = breakpoints[0];
 // breakpoints.s = breakpoints[1];
@@ -24,7 +24,7 @@ const colors = {
   link: "#2d2dff",
   text: "#545469",
   subText: "#777792",
-  textTitle: "#1F1F2F",
+  textTitle: "#77779f",
   textInverse: "#9D9DAD",
   textTitleInverse: "#FFFFFF",
   error: "#EF5350",
