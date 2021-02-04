@@ -28,7 +28,9 @@ export default class CustomDocument extends Document {
   render() {
     return (
       <Html>
-        <Head></Head>
+        <Head>
+          <title>Cristian Ronda | Folio</title>
+        </Head>
         <body>
           <Main />
           <NextScript />

@@ -26,7 +26,9 @@ const About = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Box style={{ zIndex: 1, maxWidth: "80%", color: "white" }}>
+        <Box
+          style={{ zIndex: 1, maxWidth: "80%", color: "white", padding: 10 }}
+        >
           <StaggerWrap childrenDelay={6} ease="backInOut">
             <FadeInUpBox yOffset={64} duration={2}>
               <Typography fontSize={6} style={{ wordBreak: "break-word" }}>
@@ -44,6 +46,14 @@ const About = () => {
                 {f({ id: "about.description1" })}
                 <br />
                 {f({ id: "about.description2" })}
+                Medium.
+                <a
+                  href="https://cristian-ronda.medium.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ir a Medium
+                </a>
               </Typography>
             </FadeInUpBox>
           </StaggerWrap>

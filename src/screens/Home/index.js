@@ -53,11 +53,18 @@ const Home = () => {
     <Container black={black}>
       <Flex
         flexDirection="column"
+        width={"100vw"}
         height={"calc(100vh - 64px)"}
         justifyContent="center"
         alignItems="center"
       >
-        <Box style={{ zIndex: 1 }}>
+        <Box
+          style={{
+            zIndex: 1,
+            // background: "blue",
+            alignSelf: "center",
+          }}
+        >
           <StaggerWrap childrenDelay={0.2} ease="backInOut">
             <motion.div
               drag
@@ -122,15 +129,6 @@ const Home = () => {
                   <ScaleBox duration={1} delayOrder={rand(1, 12)}>
                     <TechPick src={item.src} alt={item.alt} />
                   </ScaleBox>
-
-                  <motion.div
-                    style={{
-                      background: "rgba(0,0,0,.05)",
-                      height: 10,
-                      width: 10,
-                      borderRadius: "50%",
-                    }}
-                  />
                 </Box>
               </motion.div>
             ) : (
@@ -144,7 +142,8 @@ const Home = () => {
 };
 const Container = styled(Box)`
   transition: all 0.3s ease-in;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   ${({ black }) =>
     black
       ? css`

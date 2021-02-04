@@ -10,5 +10,5 @@ export default {
   "about.description1":
     "I like to keep updated with new tools for testing the apps I develop and give the final product a magnificent touch.",
   "about.description2":
-    "Also, I like to share my knowledge so I write a blog and you can read it here",
+    "Also, I like to share my knowledge so I write a blog and you can read it in ",
 };
