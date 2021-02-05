@@ -17,3 +17,4 @@ export * from "./parallax-box";
 export * from "./scale-box";
 export * from "./stagger-wrap";
 export * from "./typography";
+export * from "./containerTransition";

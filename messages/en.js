@@ -11,4 +11,8 @@ export default {
     "I like to keep updated with new tools for testing the apps I develop and give the final product a magnificent touch.",
   "about.description2":
     "Also, I like to share my knowledge so I write a blog and you can read it in ",
+  "about.link": "Go to blog",
+  "404_1": "This is embarrassing",
+  "404_2": "We couldn't find what you were looking for.",
+  "404_3": "Back to Home",
 };

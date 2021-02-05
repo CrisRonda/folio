@@ -10,7 +10,6 @@ export const Typography = styled(Box)`
 `;
 
 Typography.defaultProps = {
-  // as: 'p',
   fontWeight: 1,
-  // color: 'text500',
+  lineHeight: 3,
 };

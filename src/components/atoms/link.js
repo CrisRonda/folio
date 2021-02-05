@@ -1,12 +1,18 @@
 import styled from "styled-components";
+import NextLink from "next/link";
 
-import { Box } from "./box";
+export const Link = ({ children, href = "/" }) => (
+  <NextLink href={href}>
+    <StyledLink>{children}</StyledLink>
+  </NextLink>
+);
 
-export const Link = styled(Box)`
-  transition: opacity 0.5s ease-in-out;
+const StyledLink = styled.a`
+  transition: all 0.5s ease;
+  cursor: pointer;
   :hover {
     opacity: 0.8;
-    transition: opacity 0.5s ease-in-out;
+    transform: scale(1.2);
   }
 `;
 Link.defaultProps = {

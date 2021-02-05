@@ -1,25 +1,21 @@
-import PropTypes from "prop-types";
 import {
   Box,
   FadeInUpBox,
   Flex,
   StaggerWrap,
   Typography,
+  ContainerTransition,
 } from "../../components";
 import { useIntl } from "react-intl";
 import FabNavigation from "../../components/molecules/FabNavigation";
 import styled, { css } from "styled-components";
-import { useEffect, useState } from "react";
 import Infinity from "./Infinity";
 
 const About = () => {
-  const [black, setBlack] = useState(false);
   const { formatMessage: f } = useIntl();
-  useEffect(() => {
-    setBlack(true);
-  }, []);
+
   return (
-    <Container black={black}>
+    <ContainerTransition>
       <Flex
         flexDirection="column"
         height={"calc(100vh - 64px)"}
@@ -52,7 +48,7 @@ const About = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Ir a Medium
+                  {f({ id: "about.link" })}
                 </a>
               </Typography>
             </FadeInUpBox>
@@ -75,7 +71,7 @@ const About = () => {
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%" }}>
         <Infinity />
       </div>
-    </Container>
+    </ContainerTransition>
   );
 };
 
