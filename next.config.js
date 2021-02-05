@@ -4,7 +4,7 @@ const withPlugins = require("next-compose-plugins");
 const nexConfig = {
   i18n: {
     locales: ["es", "en"],
-    defaultLocale: "es",
+    defaultLocale: "en",
   },
 };
 

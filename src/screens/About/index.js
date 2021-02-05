@@ -18,6 +18,7 @@ const About = () => {
     <ContainerTransition>
       <Flex
         flexDirection="column"
+        py={4}
         height={"calc(100vh - 64px)"}
         justifyContent="center"
         alignItems="center"
@@ -27,7 +28,7 @@ const About = () => {
         >
           <StaggerWrap childrenDelay={6} ease="backInOut">
             <FadeInUpBox yOffset={64} duration={2}>
-              <Typography fontSize={6} style={{ wordBreak: "break-word" }}>
+              <Typography fontSize={6} py={2}>
                 {f({ id: "about.title" })}
               </Typography>
             </FadeInUpBox>

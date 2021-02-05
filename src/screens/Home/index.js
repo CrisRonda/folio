@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import { picsList } from "../../utils/list";
 import {
   Box,
+  ContainerTransition,
   FadeInUpBox,
   Flex,
   GridTemplate,
@@ -26,8 +27,6 @@ MainHeading.defaultProps = {
 };
 
 const Home = () => {
-  const [black, setBlack] = useState(true);
-
   const { formatMessage: f } = useIntl();
   const [data, setData] = useState(picsList);
   const { isSM } = useMediaQuery();
@@ -37,9 +36,7 @@ const Home = () => {
     damping: 100,
     stiffness: 100,
   };
-  useEffect(() => {
-    setBlack(false);
-  }, []);
+
   useEffect(() => {
     if (isSM) {
       const filter = picsList.filter((i) => i !== null);
@@ -50,7 +47,7 @@ const Home = () => {
   }, [isSM]);
 
   return (
-    <Container black={black}>
+    <ContainerTransition initialColor="black" endColor="white">
       <Flex
         flexDirection="column"
         width={"100vw"}
@@ -61,7 +58,6 @@ const Home = () => {
         <Box
           style={{
             zIndex: 1,
-            // background: "blue",
             alignSelf: "center",
           }}
         >
@@ -87,7 +83,7 @@ const Home = () => {
             <motion.div
               drag
               dragConstraints={constraintsRef}
-              dragConstraints={{ left: 0, right: 0, bottom: 10 }}
+              dragConstraints={{ left: 0, right: 0, bottom: 12 }}
               dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
               dragElastic={0.5}
               whileTap={{ cursor: "grabbing" }}
@@ -97,10 +93,7 @@ const Home = () => {
               exit={{ x: 0, opacity: 0 }}
             >
               <FadeInUpBox yOffset={48} duration={1}>
-                <Typography
-                  fontSize={[4, null, 5]}
-                  style={{ wordBreak: "break-word" }}
-                >
+                <Typography fontSize={[4, null, 5]}>
                   {f({ id: "welcome" })}
                 </Typography>
               </FadeInUpBox>
@@ -112,46 +105,19 @@ const Home = () => {
         <GridTemplate>
           {data.map((item, key) =>
             item !== null ? (
-              <motion.div
-                key={key}
-                drag
-                dragConstraints={constraintsRef}
-                dragConstraints={{ left: 0, right: 0, bottom: 12 }}
-                transition={config}
-                dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-                dragElastic={0.5}
-                whileTap={{ cursor: "grabbing" }}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ x: 0, opacity: 0 }}
-              >
-                <Box pt={key % 2 === 0 ? 4 : 0} textAlign="center">
-                  <ScaleBox duration={1} delayOrder={rand(1, 12)}>
-                    <TechPick src={item.src} alt={item.alt} />
-                  </ScaleBox>
-                </Box>
-              </motion.div>
+              <Box key={key} pt={key % 2 === 0 ? 4 : 0} textAlign="center">
+                <ScaleBox duration={1} delayOrder={rand(1, 12)}>
+                  <TechPick src={item.src} alt={item.alt} />
+                </ScaleBox>
+              </Box>
             ) : (
               <Box key={key} />
             )
           )}
         </GridTemplate>
       </Flex>
-    </Container>
+    </ContainerTransition>
   );
 };
-const Container = styled(Box)`
-  transition: all 0.3s ease-in;
-  width: 100%;
-  height: 100%;
-  ${({ black }) =>
-    black
-      ? css`
-          background-color: black;
-        `
-      : css`
-          background-color: white;
-        `}
-`;
 
 export default Home;
