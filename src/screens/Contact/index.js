@@ -6,6 +6,7 @@ import {
   ScaleBox,
 } from "../../components";
 import { useIntl } from "react-intl";
+import SEO from "../../components/molecules/SEO";
 
 const network = [
   {
@@ -65,63 +66,73 @@ const Contact = () => {
     },
   ];
   return (
-    <ContainerTransition initialColor="black" endColor="white">
-      <Flex
-        flexDirection="column"
-        pt={8}
-        flex={1}
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Typography lineHeight={4} fontSize={7}>
-          {f({ id: "contact.title" })}
-        </Typography>
+    <>
+      <SEO />
 
-        <Flex
-          flexDirection="row"
-          justifyContent="center"
-          alignItems="center"
-          flexWrap="wrap"
-          my={8}
+      <ContainerTransition initialColor="black" endColor="white">
+        <div
+          style={{
+            overflow: "scroll",
+          }}
         >
-          {network.map(({ img, label, link }, index) => (
-            <ScaleBox key={index} duration={1} delayOrder={0.1 * index}>
-              <ContainerIcon href={link} target="_blank" rel="noreferrer">
-                <Icon src={img} alt={label} />
-                <Typography color="text" fontSize={2}>
-                  {label}
-                </Typography>
-              </ContainerIcon>
-            </ScaleBox>
-          ))}
-        </Flex>
-        <Typography lineHeight={4} fontSize={7}>
-          {f({ id: "contact.subtitle" })}
-        </Typography>
-        <Flex
-          flexDirection="row"
-          justifyContent="center"
-          alignItems="center"
-          flexWrap="wrap"
-          my={8}
-        >
-          {calls.map(({ img, label, link, notOpen }, index) => (
-            <ScaleBox key={index} duration={1} delayOrder={0.1 * index}>
-              <ContainerIcon
-                href={link}
-                target={notOpen ? "" : "_blank"}
-                rel="noreferrer"
-              >
-                <Icon src={img} alt={label} />
-                <Typography color="text" fontSize={2}>
-                  {label}
-                </Typography>
-              </ContainerIcon>
-            </ScaleBox>
-          ))}
-        </Flex>
-      </Flex>
-    </ContainerTransition>
+          <Flex
+            flexDirection="column"
+            pt={8}
+            flex={1}
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Typography lineHeight={4} fontSize={7}>
+              {f({ id: "contact.title" })}
+            </Typography>
+
+            <Flex
+              flexDirection="row"
+              justifyContent="center"
+              alignItems="center"
+              flexWrap="wrap"
+              my={8}
+            >
+              {network.map(({ img, label, link }, index) => (
+                <ScaleBox key={index} duration={1} delayOrder={0.1 * index}>
+                  <ContainerIcon href={link} target="_blank" rel="noreferrer">
+                    <Icon src={img} alt={label} />
+                    <Typography color="text" fontSize={2}>
+                      {label}
+                    </Typography>
+                  </ContainerIcon>
+                </ScaleBox>
+              ))}
+            </Flex>
+            <Typography lineHeight={4} fontSize={7}>
+              {f({ id: "contact.subtitle" })}
+            </Typography>
+            <Flex
+              flexDirection="row"
+              justifyContent="center"
+              alignItems="center"
+              flexWrap="wrap"
+              my={8}
+            >
+              {calls.map(({ img, label, link, notOpen }, index) => (
+                <ScaleBox key={index} duration={1} delayOrder={0.1 * index}>
+                  <ContainerIcon
+                    href={link}
+                    target={notOpen ? "" : "_blank"}
+                    rel="noreferrer"
+                  >
+                    <Icon src={img} alt={label} />
+                    <Typography color="text" fontSize={2}>
+                      {label}
+                    </Typography>
+                  </ContainerIcon>
+                </ScaleBox>
+              ))}
+            </Flex>
+          </Flex>
+        </div>
+      </ContainerTransition>
+    </>
   );
 };
 

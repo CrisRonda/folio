@@ -16,7 +16,7 @@ const Card = ({ title, photo, problem, solution, techs, info }) => {
       <Typography fontSize={2}>{problem}</Typography>
       <Image loading="lazy" src={photo} alt={title} />
       <Typography
-        width={"60%"}
+        width={"70%"}
         style={{ whiteSpace: "pre-line" }}
         textAlign="justify"
         fontSize={2}
@@ -29,7 +29,12 @@ const Card = ({ title, photo, problem, solution, techs, info }) => {
           {info.label}
         </Link>
       </Flex>
-      <Flex justifyContent="center" alignItems="center">
+      <Flex
+        justifyContent="center"
+        flex={1}
+        alignItems="center"
+        flexWrap="wrap"
+      >
         {techs.map(({ alt, img }, i) => (
           <Flex key={i} m={2} flexDirection="column">
             <TechImage src={img} alt={alt} loading={"lazy"} />
@@ -42,8 +47,10 @@ const Card = ({ title, photo, problem, solution, techs, info }) => {
 };
 
 const Image = styled.img`
-  height: 500px;
+  height: 100%;
+  max-height: 400px;
   width: auto;
+  max-width: 250px;
   object-fit: contain;
   margin: 16px;
 `;

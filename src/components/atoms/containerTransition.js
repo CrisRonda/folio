@@ -31,7 +31,8 @@ ContainerTransition.defaultProps = {
 const Container = styled(Box)`
   position: relative;
   transition: all 1s ease-out;
-  height: 100vh;
+  display: flex;
+  height: 100%;
   ${({ transition, initialColor, endColor }) =>
     transition
       ? css`
@@ -39,5 +40,5 @@ const Container = styled(Box)`
         `
       : css`
           background-color: ${initialColor};
-        `}
+        `};
 `;

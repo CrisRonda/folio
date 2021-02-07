@@ -5,6 +5,8 @@ import Dots from "../../Models/Dots";
 import { MotionSlider } from "../../components/molecules/Slider/";
 import useContent from "./hooks/useContent";
 import Card from "./molecules/Card";
+import SEO from "../../components/molecules/SEO";
+
 const values = {
   0: {
     play: false,
@@ -34,23 +36,32 @@ const Portfolio = () => {
   const enablePlay = values[index].play;
   const { content } = useContent();
   return (
-    <ContainerTransition>
-      <PlayButton onClick={onClickButton}>
-        <Typography fontSize={3} color="black">
-          {values[index].label}
-        </Typography>
-      </PlayButton>
-      <Flex
-        flexDirection="column"
-        py={4}
-        height={"calc(100vh - 64px)"}
-        justifyContent="center"
-        alignItems="center"
-      >
-        <MotionSlider content={content} Component={Card} />
-      </Flex>
-      {enablePlay && <Dots {...values[index]} />}
-    </ContainerTransition>
+    <>
+      <SEO />
+      <ContainerTransition>
+        <div
+          style={{
+            overflow: "scroll",
+          }}
+        >
+          <PlayButton onClick={onClickButton}>
+            <Typography fontSize={3} color="black">
+              {values[index].label}
+            </Typography>
+          </PlayButton>
+          <Flex
+            flexDirection="column"
+            py={4}
+            justifyContent="center"
+            alignItems="center"
+            m="auto"
+          >
+            <MotionSlider content={content} Component={Card} />
+          </Flex>
+          {enablePlay && <Dots {...values[index]} />}
+        </div>
+      </ContainerTransition>
+    </>
   );
 };
 

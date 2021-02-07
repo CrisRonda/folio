@@ -16,6 +16,7 @@ import { useIntl } from "react-intl";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import SEO from "../../components/molecules/SEO";
 
 const MainHeading = styled(Typography)``;
 MainHeading.defaultProps = {
@@ -47,61 +48,63 @@ const Home = () => {
   }, [isSM]);
 
   return (
-    <ContainerTransition initialColor="black" endColor="white">
-      <Flex
-        flexDirection="column"
-        width={"100vw"}
-        height={"calc(100vh - 64px)"}
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Box
-          style={{
-            zIndex: 1,
-            alignSelf: "center",
-          }}
+    <>
+      <SEO />
+      <ContainerTransition initialColor="black" endColor="white">
+        <Flex
+          flexDirection="column"
+          width={"100vw"}
+          height={"calc(100vh - 64px)"}
+          justifyContent="center"
+          alignItems="center"
         >
-          <StaggerWrap childrenDelay={0.2} ease="backInOut">
-            <motion.div
-              drag
-              dragConstraints={constraintsRef}
-              dragConstraints={{ left: 0, right: 0, bottom: 12 }}
-              dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-              dragElastic={0.5}
-              whileTap={{ cursor: "grabbing" }}
-              transition={config}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ x: 0, opacity: 0 }}
-            >
-              <MainHeading mt={1} mb={["20px", null, "30px", "40px"]}>
-                <FadeInUpBox yOffset={64} duration={1}>
-                  Cristian Ronda
+          <Box
+            style={{
+              zIndex: 1,
+              alignSelf: "center",
+            }}
+          >
+            <StaggerWrap childrenDelay={0.2} ease="backInOut">
+              <motion.div
+                drag
+                dragConstraints={constraintsRef}
+                dragConstraints={{ left: 0, right: 0, bottom: 12 }}
+                dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+                dragElastic={0.5}
+                whileTap={{ cursor: "grabbing" }}
+                transition={config}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ x: 0, opacity: 0 }}
+              >
+                <MainHeading mt={1} mb={["20px", null, "30px", "40px"]}>
+                  <FadeInUpBox yOffset={64} duration={1}>
+                    Cristian Ronda
+                  </FadeInUpBox>
+                </MainHeading>
+              </motion.div>
+              <motion.div
+                drag
+                dragConstraints={constraintsRef}
+                dragConstraints={{ left: 0, right: 0, bottom: 12 }}
+                dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+                dragElastic={0.5}
+                whileTap={{ cursor: "grabbing" }}
+                transition={config}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ x: 0, opacity: 0 }}
+              >
+                <FadeInUpBox yOffset={48} duration={1}>
+                  <Typography color="black" fontSize={5}>
+                    {f({ id: "welcome" })}
+                  </Typography>
                 </FadeInUpBox>
-              </MainHeading>
-            </motion.div>
-            <motion.div
-              drag
-              dragConstraints={constraintsRef}
-              dragConstraints={{ left: 0, right: 0, bottom: 12 }}
-              dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-              dragElastic={0.5}
-              whileTap={{ cursor: "grabbing" }}
-              transition={config}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ x: 0, opacity: 0 }}
-            >
-              <FadeInUpBox yOffset={48} duration={1}>
-                <Typography color="black" fontSize={[4, null, 5]}>
-                  {f({ id: "welcome" })}
-                </Typography>
-              </FadeInUpBox>
-            </motion.div>
-          </StaggerWrap>
-        </Box>
-      </Flex>
-      <Flex justifyContent="center" style={{ overflowX: "hidden" }}>
+              </motion.div>
+            </StaggerWrap>
+          </Box>
+        </Flex>
+        {/* <Flex justifyContent="center" style={{ overflowX: "hidden" }}> */}
         <GridTemplate>
           {data.map((item, key) =>
             item !== null ? (
@@ -115,8 +118,9 @@ const Home = () => {
             )
           )}
         </GridTemplate>
-      </Flex>
-    </ContainerTransition>
+        {/* </Flex> */}
+      </ContainerTransition>
+    </>
   );
 };
 

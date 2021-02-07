@@ -54,7 +54,7 @@ function Model({ duration, play, dots = 10000, ...props }) {
   return (
     <instancedMesh args={[null, null, dots]} ref={ref} {...props}>
       <circleBufferGeometry args={[0.15, 8]} />
-      <meshBasicMaterial color={"white"} />
+      <meshBasicMaterial color={"white"} opacity={0.3} transparent />
     </instancedMesh>
   );
 }
