@@ -12,9 +12,11 @@ import {
 } from "../../components";
 import { useIntl } from "react-intl";
 
-const Duck = dynamic(() => import("../../Models/Duck"), { ssr: false });
+const Duck = dynamic(() => import("../../Models/Duck"), {
+  ssr: false,
+});
 
-const ErrorPage = (props) => {
+const ErrorPage = () => {
   const { formatMessage: f } = useIntl();
   return (
     <ContainerTransition>

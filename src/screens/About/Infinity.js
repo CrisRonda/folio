@@ -18,6 +18,8 @@ function Stars({ count = 2000 }) {
     const geo = new THREE.SphereBufferGeometry(1, 10, 10);
     const mat = new THREE.MeshBasicMaterial({
       color: new THREE.Color("white"),
+      opacity: 0.3,
+      transparent: true,
     });
     const coords = new Array(count)
       .fill()

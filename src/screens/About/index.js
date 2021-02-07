@@ -36,14 +36,17 @@ const About = () => {
               <Typography
                 fontSize={3}
                 lineHeight={3}
-                style={{ wordBreak: "break-word", textAlign: "justify" }}
+                style={{
+                  wordBreak: "break-word",
+                  textAlign: "justify",
+                  whiteSpace: "pre-line",
+                }}
               >
                 {f({ id: "about.description" })}
                 <br />
                 {f({ id: "about.description1" })}
                 <br />
                 {f({ id: "about.description2" })}
-                Medium.
                 <a
                   href="https://cristian-ronda.medium.com/"
                   target="_blank"

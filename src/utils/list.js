@@ -11,9 +11,10 @@ export const picsList = [
   null,
   null,
   {
-    src: "/images/techs/3.svg",
-    alt: "Typescript",
+    src: "/images/techs/8.svg",
+    alt: "Storybook",
   },
+
   null,
   null,
   {
@@ -28,9 +29,10 @@ export const picsList = [
   null,
   null,
   {
-    src: "/images/techs/6.svg",
-    alt: "C#",
+    src: "/images/techs/12.svg",
+    alt: "ReactJS",
   },
+
   null,
   null,
   {
@@ -39,14 +41,15 @@ export const picsList = [
   },
   null,
   {
-    src: "/images/techs/8.svg",
-    alt: "Storybook",
+    src: "/images/techs/3.svg",
+    alt: "Typescript",
   },
   null,
   {
-    src: "/images/techs/9.svg",
-    alt: "NodeJS",
+    src: "/images/techs/6.svg",
+    alt: "C#",
   },
+
   null,
   null,
   {
@@ -61,8 +64,8 @@ export const picsList = [
   },
   null,
   {
-    src: "/images/techs/12.svg",
-    alt: "ReactJS",
+    src: "/images/techs/9.svg",
+    alt: "NodeJS",
   },
   null,
   null,

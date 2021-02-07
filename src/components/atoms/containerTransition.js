@@ -29,6 +29,7 @@ ContainerTransition.defaultProps = {
 };
 
 const Container = styled(Box)`
+  position: relative;
   transition: all 1s ease-out;
   height: 100vh;
   ${({ transition, initialColor, endColor }) =>

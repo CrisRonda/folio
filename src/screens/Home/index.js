@@ -21,7 +21,7 @@ const MainHeading = styled(Typography)``;
 MainHeading.defaultProps = {
   as: "h1",
   fontWeight: 2,
-  color: "textTitle",
+  color: "black",
   fontSize: [6, null, 10, 11],
   lineHeight: [3, null, 6, 8],
 };
@@ -93,7 +93,7 @@ const Home = () => {
               exit={{ x: 0, opacity: 0 }}
             >
               <FadeInUpBox yOffset={48} duration={1}>
-                <Typography fontSize={[4, null, 5]}>
+                <Typography color="black" fontSize={[4, null, 5]}>
                   {f({ id: "welcome" })}
                 </Typography>
               </FadeInUpBox>
