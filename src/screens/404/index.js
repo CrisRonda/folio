@@ -29,7 +29,14 @@ const ErrorPage = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <div style={{ zIndex: 12 }}>
+          <div
+            style={{
+              zIndex: 12,
+              width: "100vw",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
             <StaggerWrap childrenDelay={6} ease="ease">
               <FadeInUpBox yOffset={64} duration={2}>
                 <Typography fontSize={6} color="white">
@@ -50,11 +57,11 @@ const ErrorPage = () => {
 
         <div style={{ position: "absolute", top: 0, left: 0, width: "100%" }}>
           <Canvas camera={{ position: [0, 1, 3] }}>
-            <ambientLight intensity={1} />
-            <pointLight position={[40, 40, 40]} />
+            <ambientLight intensity={0.1} />
+            <pointLight position={[40, 40, 20]} />
             <OrbitControls />
             <Suspense fallback={null}>
-              <Duck />
+              {Duck ? <Duck /> : <p>Cargando...</p>}
             </Suspense>
           </Canvas>
         </div>
