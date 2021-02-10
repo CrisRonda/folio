@@ -56,14 +56,18 @@ const ErrorPage = () => {
         </Flex>
 
         <div style={{ position: "absolute", top: 0, left: 0, width: "100%" }}>
-          <Canvas camera={{ position: [0, 1, 3] }}>
-            <ambientLight intensity={0.1} />
-            <pointLight position={[40, 40, 20]} />
-            <OrbitControls />
-            <Suspense fallback={null}>
-              {Duck ? <Duck /> : <p>Cargando...</p>}
-            </Suspense>
-          </Canvas>
+          {Duck ? (
+            <Canvas camera={{ position: [0, 1, 3] }}>
+              <ambientLight intensity={0.1} />
+              <pointLight position={[40, 40, 20]} />
+              <OrbitControls />
+              <Suspense fallback={null}>
+                <Duck />
+              </Suspense>
+            </Canvas>
+          ) : (
+            <p>Cargando...</p>
+          )}
         </div>
       </ContainerTransition>
     </>
