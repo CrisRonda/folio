@@ -72,6 +72,11 @@ const Contact = () => {
       <ContainerTransition initialColor="black" endColor="white">
         <div
           style={{
+            display: "flex",
+            alignItems: "center",
+            justifyItems: "center",
+            width: "100%",
+            height: "100%",
             overflow: "scroll",
           }}
         >
@@ -82,7 +87,7 @@ const Contact = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <Typography lineHeight={4} fontSize={7}>
+            <Typography lineHeight={[1, 2, 4]} fontSize={[3, 4, 7]}>
               {f({ id: "contact.title" })}
             </Typography>
 
@@ -90,8 +95,8 @@ const Contact = () => {
               flexDirection="row"
               justifyContent="center"
               alignItems="center"
+              my={[3, 4, 6]}
               flexWrap="wrap"
-              my={8}
             >
               {network.map(({ img, label, link }, index) => (
                 <ScaleBox key={index} duration={1} delayOrder={0.1 * index}>
@@ -104,7 +109,7 @@ const Contact = () => {
                 </ScaleBox>
               ))}
             </Flex>
-            <Typography lineHeight={4} fontSize={7}>
+            <Typography lineHeight={[1, 2, 4]} fontSize={[3, 4, 7]}>
               {f({ id: "contact.subtitle" })}
             </Typography>
             <Flex
@@ -112,7 +117,7 @@ const Contact = () => {
               justifyContent="center"
               alignItems="center"
               flexWrap="wrap"
-              my={8}
+              my={[3, 4, 6]}
             >
               {calls.map(({ img, label, link, notOpen }, index) => (
                 <ScaleBox key={index} duration={1} delayOrder={0.1 * index}>

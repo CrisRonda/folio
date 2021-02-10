@@ -70,7 +70,7 @@ export const MotionSlider = ({ content, Component }) => {
             },
             opacity: { duration: 0.6 },
           }}
-          drag="x"
+          // drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={1}
           onDragEnd={onDragEnd}

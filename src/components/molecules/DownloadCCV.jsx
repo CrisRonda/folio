@@ -27,8 +27,8 @@ const Button = styled.button`
   border: none;
   outline: none;
   :hover {
-    background-color: black;
-    color: white;
+    transform: scale(1.1);
+    color: #bdb7b7;
   }
 `;
 DownloadCCV.propTypes = {};

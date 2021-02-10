@@ -47,12 +47,17 @@ const Card = ({ title, photo, problem, solution, techs, info }) => {
 };
 
 const Image = styled.img`
-  height: 100%;
-  max-height: 400px;
+  height: 400px;
   width: auto;
-  max-width: 250px;
-  object-fit: contain;
+  max-width: 600px;
+  object-fit: fill;
   margin: 16px;
+  transition: all 0.6s ease;
+  @media (max-width: 620px) {
+    height: 350px;
+    width: auto;
+    max-width: 280px;
+  }
 `;
 
 const TechImage = styled.img`

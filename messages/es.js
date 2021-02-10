@@ -27,18 +27,18 @@ export default {
   "folio0.solution": `Como puedes notar utilice una gama interesante de librerías como: ThreeJS para animaciones en 3D y uso de modelos dentro del navegador. Por otro lado, Framer Motion para animaciones CSS.\r\nY todo esto lo uní a NextJS para mejorar el performance de mi portafolio. Por último transforme este proyecto en una Progressive Web App, así que animate y prueba todas las funcionalidades que he agregado!`,
   "folio1.title": "Fashion App",
   "folio1.problem":
-    "La transformación digital ha llegado a todas partes y los clientes quieren su propia app móvil.",
+    "La transformación digital ha llegado a todas partes, los clientes quieren su propia app móvil.",
   "folio1.solution":
-    "Esta proyecto cuenta con las pantallas iniciales de cualquier app que venda algo. Tambien, cuenta con animaciones para hacerla más atractiva!\r\nEsta app esta construida con Expo y React Native, por lo que cuenta con la misma base de código JavaScript para iOS y Android.",
+    "Este proyecto cuenta con las pantallas iniciales de cualquier app que venda algun producto. Tambien, cuenta con animaciones para hacerla más atractiva!\r\nEsta app esta construida con Expo y React Native, por lo que cuenta con la misma base de código JavaScript para iOS y Android.",
   "folio2.title": "Flutter Player",
   "folio2.problem":
     "En 2019 aparece un nuevo competidor en el mundo de las aplicaciones 'Híbridas' y bueno quería probarlo con esta app creada completamente con Dart y Flutter 1.0.",
   "folio2.solution":
-    "Lo interesante de esta aplicación fue probar el CustomPaint para dibujar las frecuencias (obtenidas a través de la fft) de la canción que se reproduce.\r\nAdemás las canciones que se reproducen son obtenidas desde la API de Sound Cloud.",
+    "Lo interesante de esta aplicación fue probar el CustomPaint para dibujar las frecuencias (obtenidas a través de la fft) de la canción que se reproduce.\r\nAdemás las canciones que se reproducen son obtenidas desde la API de Sound Cloud.\r\nEste ejemplo lo hice por pura diversión para aprender a utilizar los widgets con el nuevo framework de Google!",
   "folio3.title": "Tracking App",
   "folio3.problem":
     "Este proyecto fue una prueba para la obtención de la posición del dispositivo y calcular la distancia recorrida en un periodo de tiempo.",
   "folio3.solution":
-    "Utilice el framework React Native para crear la UI necesaria. Para obtener la posición del dispositivo en background utilice la librería 'react-native-background-geolocation' por que cuenta con el manejo de la batería.\r\nPor último, para guardar los datos de cada seguimiento usé Redux para persistir los datos en la memoria del dispositivo.",
+    "De la mano de React Native para crear la UI necesaria para obtener la posición del dispositivo en background, para esto utilice la librería 'react-native-background-geolocation' pues cuenta con el manejo de la batería en ambas plataformas en su módulo nativo.\r\nLos datos recopilados se pueden enviar a un API externo sea este NodeJS con mongo, una base de datos SQL y su servicio o Firebase.\r\nEste ejemplo, los datos recopilados de cada seguimiento se guardan en la memoria del dispositivo a través de Redux.",
   seeGithub: "Ver en github",
 };
