@@ -1,5 +1,6 @@
 import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
 import Infinity from "../../src/screens/About/Infinity";
+import imageFile from "../../public/images/cube.png";
 
 <Meta title="Components/ThreeJS/Infinity" component={Infinity} />
 
@@ -35,7 +36,7 @@ This component has a Stars in universe Canvas. This components build with ThreeJ
 and reac-fiber-three. Here use `useFrame` that exec rotation and scale of group.
 This component draw a cube in the space and each point position is calculated through a random number in each axis:
 
-<img src="/images/cube.png" alt="cube" />
+<img src={imageFile} alt="cube" />
 
 ```js
 const coords = new Array(count)
