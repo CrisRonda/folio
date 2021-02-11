@@ -1,52 +1,29 @@
-import { useRef } from "react";
+import DuckModel from "./Model";
+import { Suspense } from "react";
+import { Canvas } from "react-three-fiber";
+import { OrbitControls } from "drei";
 
-import { useFrame, useLoader } from "react-three-fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-
-const Bird = ({ url = "/glb/duck/scene.gltf", ...props }) => {
-  const { nodes } = useLoader(GLTFLoader, url);
-  const group = useRef();
-
+const Duck = () => {
   return (
-    <group ref={group} rotation={[0, 0.2, 0.01]} position={[0, 0, 1.5]}>
-      <mesh
-        material={nodes.defaultMaterial.material}
-        geometry={nodes.defaultMaterial.geometry}
-      />
-      <mesh
-        material={nodes.defaultMaterial_1.material}
-        geometry={nodes.defaultMaterial_1.geometry}
-      />
-      <mesh
-        material={nodes.defaultMaterial_2.material}
-        geometry={nodes.defaultMaterial_2.geometry}
-      />
-      <mesh
-        material={nodes.defaultMaterial_3.material}
-        geometry={nodes.defaultMaterial_3.geometry}
-      />
-      <mesh
-        material={nodes.defaultMaterial_4.material}
-        geometry={nodes.defaultMaterial_4.geometry}
-      />
-      <mesh
-        material={nodes.defaultMaterial_5.material}
-        geometry={nodes.defaultMaterial_5.geometry}
-      />
-      <mesh
-        material={nodes.defaultMaterial_6.material}
-        geometry={nodes.defaultMaterial_6.geometry}
-      />
-      <mesh
-        material={nodes.defaultMaterial_7.material}
-        geometry={nodes.defaultMaterial_7.geometry}
-      />
-      <mesh
-        material={nodes.defaultMaterial_8.material}
-        geometry={nodes.defaultMaterial_8.geometry}
-      />
-    </group>
+    <div
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        background: "black",
+      }}
+    >
+      <Canvas camera={{ position: [0, 1, 3] }}>
+        <ambientLight intensity={0.1} />
+        <pointLight position={[40, 40, 20]} />
+        <OrbitControls />
+        <Suspense fallback={<p>Cargando...</p>}>
+          <DuckModel />
+        </Suspense>
+      </Canvas>
+    </div>
   );
 };
-
-export default Bird;
+export default Duck;

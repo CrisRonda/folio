@@ -1,7 +1,4 @@
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
-import { Canvas } from "react-three-fiber";
-import { OrbitControls } from "drei";
 import {
   ContainerTransition,
   FadeInUpBox,
@@ -54,17 +51,7 @@ const ErrorPage = () => {
             </StaggerWrap>
           </div>
         </Flex>
-
-        <div style={{ position: "absolute", top: 0, left: 0, width: "100%" }}>
-          <Canvas camera={{ position: [0, 1, 3] }}>
-            <ambientLight intensity={0.1} />
-            <pointLight position={[40, 40, 20]} />
-            <OrbitControls />
-            <Suspense fallback={null}>
-              <Duck />
-            </Suspense>
-          </Canvas>
-        </div>
+        <Duck />
       </ContainerTransition>
     </>
   );

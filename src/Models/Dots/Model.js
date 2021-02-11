@@ -29,11 +29,12 @@ function Model({ duration, play, dots = 10000, ...props }) {
       positions[i].y += (Math.random() - 0.5) * randomAmount;
       distances[i] =
         positions[i].distanceTo(origin) +
-        Math.cos(positions[i].angleTo(right) * 8) * 0.5;
+        Math.sin(positions[i].angleTo(right) * 8) * 0.5;
       transform.setPosition(positions[i]);
       ref.current.setMatrixAt(i, transform);
     }
   }, [play]);
+
   useFrame(({ clock }) => {
     if (play) {
       let dist, t, position, wave;
@@ -41,7 +42,7 @@ function Model({ duration, play, dots = 10000, ...props }) {
         position = positions[i];
         dist = distances[i];
         t = clock.elapsedTime - dist / 25; // wave is offset away from center
-        wave = roundedWave(t, 0.15 + (0.2 * dist) / 72, 0.4, 1 / duration);
+        wave = roundedWave(t, 0.15 + dist / 72, 0.4, 1 / duration);
         vec.copy(position).multiplyScalar(wave + 1.3);
         transform.setPosition(vec);
         ref.current.setMatrixAt(i, transform);
@@ -51,6 +52,7 @@ function Model({ duration, play, dots = 10000, ...props }) {
       ref.current.instanceMatrix.needsUpdate = false;
     }
   });
+
   return (
     <instancedMesh args={[null, null, dots]} ref={ref} {...props}>
       <circleBufferGeometry args={[0.15, 8]} />

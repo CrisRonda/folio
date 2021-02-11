@@ -1,0 +1,56 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import Dots from "../../src/Models/Dots";
+
+<Meta title="Components/ThreeJS/Dots" component={Dots} />
+
+export const Beat = (args) => <Dots {...args} />;
+
+# Dots Component
+
+<Canvas>
+  <Story name="Dots background" args={{}}>
+    {Beat.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Dots} />
+
+## About
+
+This component has wave in universe Canvas. This components build with ThreeJS
+and reac-fiber-three.
+
+The animation responds to the equation, where:
+
+<div style={{ textAlign: "left" }}>
+  <code>a</code> is amplitude
+  <br />
+  <code>x</code>is time
+  <br />
+  <code>d1</code>is the duration of the animation
+  <br />
+  <code>P0</code>is the position of a point
+</div>
+<img
+  src="https://res.cloudinary.com/dzh1db41l/image/upload/v1613002462/arctan_fshyzx.png"
+  alt="equation"
+  style={{ width: "100%", maxWidth: 450 }}
+/>
+
+For demo, I simulate the position variation of a only point.
+
+If the above function will not use `arctan` function this on values close to 0, the animation will fire like below:
+
+<img
+  src="https://media.giphy.com/media/bnHUTUYeKkwrXEyClH/giphy.gif"
+  alt="sin"
+/>
+
+For this reason use the `arctan` function to smooth the animation.
+
+<img
+  src="https://media.giphy.com/media/5mZbNyFXvW7M2SWniq/giphy.gif"
+  alt="arctan"
+/>

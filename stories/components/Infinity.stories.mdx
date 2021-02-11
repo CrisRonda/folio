@@ -1,0 +1,62 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import Infinity from "../../src/screens/About/Infinity";
+
+<Meta title="Components/ThreeJS/Infinity" component={Infinity} />
+
+export const Template = (args) => (
+  <div
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+    }}
+  >
+    <Infinity {...args} />
+  </div>
+);
+
+# Infinity Component
+
+<Canvas>
+  <Story name="Infinity background" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Infinity} />
+
+## About
+
+This component has a Stars in universe Canvas. This components build with ThreeJS
+and reac-fiber-three. Here use `useFrame` that exec rotation and scale of group.
+This component draw a cube in the space and each point position is calculated through a random number in each axis:
+
+<img src="/images/cube.png" alt="cube" />
+
+```js
+const coords = new Array(count)
+  .fill()
+  .map((i) => [
+    Math.random() * 600 - 300,
+    Math.random() * 600 - 300,
+    Math.random() * 600 - 300,
+  ]);
+```
+
+For animations use `useFrame` where `r` is the rotation on the Z axis that moves according angle (`speedRotation`) with sine function
+
+And `s` is the scale on the X, Y and Z axis that moves according angle (`speedScale`) with cosine function.
+
+```js
+useFrame(() => {
+  const r = Math.sin(THREE.Math.degToRad((theta += speedRotation)));
+  const s = 3 * Math.cos(THREE.Math.degToRad(theta * speedScale));
+
+  group.current.rotation.set(0, 0, r);
+  group.current.scale.set(s, s, s);
+});
+```

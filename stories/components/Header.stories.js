@@ -10,6 +10,6 @@ HeaderStory.args = {};
 // Here we export the default component that
 // will be used by Storybook to show it inside the sidebar
 export default {
-  title: "Welcome/Components/Header",
+  title: "Components/Header",
   component: Banner,
 };
