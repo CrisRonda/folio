@@ -73,7 +73,7 @@ const Contact = () => {
   });
   return (
     <>
-      <SEO />
+      <SEO {...seoData} />
 
       <ContainerTransition initialColor="black" endColor="white">
         <div
