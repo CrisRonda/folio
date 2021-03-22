@@ -5,7 +5,8 @@ import Dots from "../../Models/Dots";
 import { MotionSlider } from "../../components/molecules/Slider/";
 import useContent from "./hooks/useContent";
 import Card from "./molecules/Card";
-import SEO from "../../components/molecules/SEO";
+import SEO from "../../components/SEO";
+import useSEO from "../../hooks/useSEO";
 
 const values = {
   0: {
@@ -32,12 +33,19 @@ const values = {
 
 const Portfolio = () => {
   const [index, setIndex] = useState(0);
-  const onClickButton = () => setIndex((bef) => (bef >= 3 ? 0 : (bef += 1)));
-  const enablePlay = values[index].play;
   const { content } = useContent();
+  const onClickButton = () =>
+    setIndex((bef) => (bef >= content.length ? 0 : (bef += 1)));
+  const enablePlay = values[index].play;
+  const { seoData } = useSEO({
+    seo_key_description: "seo_description_folio",
+    seo_key_title: "seo_title_folio",
+    route: "/folio",
+  });
+
   return (
     <>
-      <SEO />
+      <SEO {...seoData} />
       <ContainerTransition>
         <div
           style={{

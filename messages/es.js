@@ -6,7 +6,7 @@ export default {
   nextFolio: "Portafolio",
   nextContact: "Contáctame",
   call: "Llámame",
-  downloadCV: "Descarga mi CCV",
+  downloadCV: "Descargar CCV",
   "contact.title": "¡Gracias por visitar mi web!",
   "contact.subtitle": "Ponte en contacto conmigo a través de:",
   "about.title": "Bienvenido a mi web",
@@ -25,6 +25,12 @@ export default {
   "folio0.problem":
     "Este proyecto nace ante la necesidad de mostrar mi trabajo ante el mundo. Además, mostrar mis habilidades del desarrollo de aplicaciones web.",
   "folio0.solution": `Como puedes notar utilice una gama interesante de librerías como: ThreeJS para animaciones en 3D y uso de modelos dentro del navegador. Por otro lado, Framer Motion para animaciones CSS.\r\nY todo esto lo uní a NextJS para mejorar el performance de mi portafolio. Por último transforme este proyecto en una Progressive Web App, así que animate y prueba todas las funcionalidades que he agregado!`,
+
+  "folio4.title": "Dragon Ball API",
+  "folio4.problem":
+    "Proyecto full stack creado por pura diversión y se encuentra desplegado. Utiliza suscripciones para el manejo de datos en tiempo real, cuenta con CRUD de personajes.\r\n",
+  "folio4.solution": `Para realizar este excelente proyecto en el frontend utilice Angular, Material Angular, Form y Apollo Angular. Para el backend utilice NodeJS, Express JS, Mongo y GraphQL.\r\nSi te animas a revisar el código esta disponible en GitHub, dale fork, editalo, y dame estrellita.`,
+
   "folio1.title": "Fashion App",
   "folio1.problem":
     "La transformación digital ha llegado a todas partes, los clientes quieren su propia app móvil.",
@@ -41,4 +47,22 @@ export default {
   "folio3.solution":
     "De la mano de React Native para crear la UI necesaria para obtener la posición del dispositivo en background, para esto utilice la librería 'react-native-background-geolocation' pues cuenta con el manejo de la batería en ambas plataformas en su módulo nativo.\r\nLos datos recopilados se pueden enviar a un API externo sea este NodeJS con mongo, una base de datos SQL y su servicio o Firebase.\r\nEste ejemplo, los datos recopilados de cada seguimiento se guardan en la memoria del dispositivo a través de Redux.",
   seeGithub: "Ver en github",
+
+  seo_title_about: "Sobre mí",
+  seo_description_about:
+    "Información sobre Cristian Ronda desarrollador ecuatoriano en frameworks como React JS, React Native, NodeJS y Flutter.",
+
+  seo_title_contact: "Contacto",
+  seo_description_contact:
+    "Contacta con el un desarrollador ecuatoriano en Ecuador. Cristian Ronda conoce varios lenguajes de programación como Javascript, Dart, Python, C#, Java, entre otros. Además conocé frameworks como React JS, React Native, NodeJS, Flutter, JWT, GraphQL en plataformas web, iOS y Android.",
+
+  seo_title_folio: "Portafolio",
+  seo_description_folio:
+    "Portafolio con proyectos desarrollados en React, NextJS, React Native, Flutter y Angular",
+
+  seo_title_index: "Cristian Ronda",
+  seo_description_index:
+    "Cristian Ronda es un desarrollador ecuatoriano de aplicaciones web, móviles y de servidor. También, es amante de la comida. Actualmente se encuentra en Quito en busca de trabajo.",
+  seo_title_404: "Página no encontrada",
+  seo_description_404: "Página no encontrada",
 };

@@ -36,9 +36,45 @@ const useContent = () => {
         },
       ],
     },
-    // fashion
     {
       id: 1,
+      title: f({ id: "folio4.title" }),
+      solution: f({ id: "folio4.solution" }),
+      problem: f({ id: "folio4.problem" }),
+      photo:
+        "https://camo.githubusercontent.com/3af5f0c485433428b2dc1af7b90b36ff57aba78ded414e6e1e0e966ee5faabb6/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f59726f706c4a5059534652644175673159432f67697068792e676966",
+      info: {
+        link: "https://github.com/CrisRonda/dbz-angular",
+        label: f({ id: "seeGithub" }),
+        icon:
+          "https://res.cloudinary.com/dzh1db41l/image/upload/v1612649890/github-icon-white-6_m9z7xs.png",
+      },
+      techs: [
+        {
+          alt: "Angular",
+          img:
+            "https://res.cloudinary.com/dzh1db41l/image/upload/v1616452509/angular-icon-1_i6pjr5.svg",
+        },
+        {
+          alt: "NodeJS",
+          img:
+            "https://res.cloudinary.com/dzh1db41l/image/upload/v1616452710/nodejs-icon_yzshyk.svg",
+        },
+        {
+          alt: "Apollo GraphQL",
+          img:
+            "https://res.cloudinary.com/dzh1db41l/image/upload/v1616452750/graphql-logo-2_sar57x.svg",
+        },
+        {
+          alt: "JWT",
+          img:
+            "https://res.cloudinary.com/dzh1db41l/image/upload/v1616452790/jwt-3_ecnief.svg",
+        },
+      ],
+    },
+    // fashion
+    {
+      id: 2,
       title: f({ id: "folio1.title" }),
       solution: f({ id: "folio1.solution" }),
       problem: f({ id: "folio1.problem" }),
@@ -60,7 +96,7 @@ const useContent = () => {
     },
     // flutter
     {
-      id: 2,
+      id: 3,
       title: f({ id: "folio2.title" }),
       solution: f({ id: "folio2.solution" }),
       problem: f({ id: "folio2.problem" }),
@@ -76,7 +112,7 @@ const useContent = () => {
     },
     // tracking
     {
-      id: 3,
+      id: 4,
       title: f({ id: "folio3.title" }),
       solution: f({ id: "folio3.solution" }),
       problem: f({ id: "folio3.problem" }),

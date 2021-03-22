@@ -6,7 +6,8 @@ import {
   ScaleBox,
 } from "../../components";
 import { useIntl } from "react-intl";
-import SEO from "../../components/molecules/SEO";
+import SEO from "../../components/SEO";
+import useSEO from "../../hooks/useSEO";
 
 const network = [
   {
@@ -65,6 +66,11 @@ const Contact = () => {
       notOpen: true,
     },
   ];
+  const { seoData } = useSEO({
+    seo_key_description: "seo_description_contact",
+    seo_key_title: "seo_title_contact",
+    route: "/contact",
+  });
   return (
     <>
       <SEO />

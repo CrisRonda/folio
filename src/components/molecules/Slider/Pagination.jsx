@@ -10,9 +10,13 @@ const Pagination = ({
   setPage,
 }) => {
   if (typeof window !== "undefined") {
-    document.addEventListener("keydown", (event) => {
-      const keyName = event.key;
-      console.log("keydown event\n\n" + "key: " + keyName);
+    document.addEventListener("keydown", ({ key }) => {
+      if (key === "ArrowRight") {
+        paginate(1);
+      }
+      if (key === "ArrowLeft") {
+        paginate(-1);
+      }
     });
   }
   return (

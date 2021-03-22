@@ -9,15 +9,20 @@ import {
 import { useIntl } from "react-intl";
 import FabNavigation from "../../components/molecules/FabNavigation";
 import styled, { css } from "styled-components";
-import SEO from "../../components/molecules/SEO";
+import SEO from "../../components/SEO";
 import Infinity from "./Infinity";
+import useSEO from "../../hooks/useSEO";
 
 const About = () => {
   const { formatMessage: f } = useIntl();
-
+  const { seoData } = useSEO({
+    seo_key_description: "seo_description_contact",
+    seo_key_title: "seo_title_contact",
+    route: "/contact",
+  });
   return (
     <>
-      <SEO />
+      <SEO {...seoData} />
       <ContainerTransition>
         <Flex
           flexDirection="column"

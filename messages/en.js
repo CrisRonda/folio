@@ -6,10 +6,9 @@ export default {
   nextFolio: "Portfolio",
   nextContact: "Contact me",
   call: "Call me",
-  downloadCV: "Download my CCV",
+  downloadCV: "Download Resume",
   "contact.title": "Thanks for visiting my website!",
   "contact.subtitle": "Get in touch with me through:",
-
   "about.title": "Welcome to my website",
   "about.description":
     "Hi! I'm Cristian Ronda, I'm 26 years old and I live in Quito-Ecuador. I have a degree in Electronic Engineering and Information Networks that I obtained at the National Polytechnic School of Ecuador.\r\nI am currently working as a Frontend developer, you you might ask why? Well, I love web, mobile and desktop interface programming. ",
@@ -24,8 +23,14 @@ export default {
 
   "folio0.title": "Portfolio",
   "folio0.problem":
-    "This project was born out of the need to show my work to the world. Also, to show my web application development skills.",
+    "TThis project shows my work to the world. Also, show my web application development skills.",
   "folio0.solution": `As you can see I used an interesting range of libraries like: ThreeJS for 3D animations and use of models within the browser. On the other hand, Framer Motion for CSS animations. \r\nAnd all this I joined to NextJS to improve the performance of my portfolio. Finally transform this project into a Progressive Web App, so go ahead and try all the functionalities that I have added! `,
+
+  "folio4.title": "Dragon Ball API",
+  "folio4.problem":
+    "Full stack project created for fun and it is deployed. It uses subscriptions for the management of data in real time, it has CRUD of characters.",
+  "folio4.solution": `To do this excellent project on the frontend use Angular, Material Angular, Form and Apollo Angular. For the backend use NodeJS, Express JS, Mongo and GraphQL.\r\nIf you dare to review the code, it is available on GitHub, fork it, edit it, and give me a star.`,
+
   "folio1.title": "Fashion App",
   "folio1.problem":
     "The digital transformation has reached everywhere and customers want their own mobile app.",
@@ -42,4 +47,22 @@ export default {
   "folio3.solution":
     "Use the React Native framework to create the necessary UI. To get the position of the device in the background use the library 'react-native-background-geolocation' because it has battery management.\r\nFinally, to save the data of each trace I used Redux to persist the data in the device memory. ",
   seeGithub: "See on github",
+
+  seo_title_about: "About me",
+  seo_description_about:
+    "Information about Cristian Ronda, an Ecuadorian developer in frameworks such as React JS, React Native, NodeJS and Flutter.",
+
+  seo_title_contact: "Contact",
+  seo_description_contact:
+    "Contact an Ecuadorian developer. Cristian Ronda knows several programming languages such as Javascript, Dart, Python, C #, Java, etc. I also got to know frameworks like React JS, React Native, NodeJS, Flutter, JWT, GraphQL on web platforms, iOS and Android.",
+
+  seo_title_folio: "Portfolio",
+  seo_description_folio:
+    "Portfolio with projects developed in React, NextJS, React Native, Flutter and Angular",
+
+  seo_title_index: "Cristian Ronda",
+  seo_description_index:
+    "Cristian Ronda is an Ecuadorian developer of web, mobile and server applications. Also, he is a food lover. He is currently in Quito looking for work.",
+  seo_title_404: "Not found",
+  seo_description_404: "Page not found",
 };

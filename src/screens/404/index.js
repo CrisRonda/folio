@@ -8,7 +8,8 @@ import {
   Typography,
 } from "../../components";
 import { useIntl } from "react-intl";
-import SEO from "../../components/molecules/SEO";
+import SEO from "../../components/SEO";
+import useSEO from "../../hooks/useSEO";
 
 const Duck = dynamic(() => import("../../Models/Duck"), {
   ssr: false,
@@ -16,9 +17,14 @@ const Duck = dynamic(() => import("../../Models/Duck"), {
 
 const ErrorPage = () => {
   const { formatMessage: f } = useIntl();
+  const { seoData } = useSEO({
+    seo_key_description: "seo_description_404",
+    seo_key_title: "seo_title_404",
+    route: "/404",
+  });
   return (
     <>
-      <SEO title="404 | No encontramos lo que buscabas" />
+      <SEO {...seoData} />
       <ContainerTransition>
         <Flex
           flexDirection="column"
