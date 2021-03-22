@@ -6,8 +6,20 @@ import { IntlProvider } from "react-intl";
 import { useRouter } from "next/router";
 import messages from "../messages";
 import { AnimateSharedLayout } from "framer-motion";
+import { useEffect } from "react";
+import * as gtag from "../lib/gtag";
+
 function MyApp({ Component, pageProps, router }) {
-  const { locale } = useRouter();
+  const { locale, events } = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    };
+    events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [events]);
   return (
     <ThemeProvider theme={theme}>
       <IntlProvider locale={locale} messages={messages[locale]}>

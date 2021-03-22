@@ -15,6 +15,9 @@ const SEO = ({ title, description, properties, urlAltern }) => (
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     {/* Properties */}
+    {properties.map((item, index) => (
+      <meta key={index} property={item.property} content={item.content} />
+    ))}
 
     <link rel="dns-prefetch" href="https://cristian-ronda.tk/" />
     <link rel="preconnect" href="https://cristian-ronda.tk/" />
