@@ -46,7 +46,13 @@ export default {
     "Este proyecto fue una prueba para la obtención de la posición del dispositivo y calcular la distancia recorrida en un periodo de tiempo.",
   "folio3.solution":
     "De la mano de React Native para crear la UI necesaria para obtener la posición del dispositivo en background, para esto utilice la librería 'react-native-background-geolocation' pues cuenta con el manejo de la batería en ambas plataformas en su módulo nativo.\r\nLos datos recopilados se pueden enviar a un API externo sea este NodeJS con mongo, una base de datos SQL y su servicio o Firebase.\r\nEste ejemplo, los datos recopilados de cada seguimiento se guardan en la memoria del dispositivo a través de Redux.",
+  "folio5.title": "Ecommerce App",
+  "folio5.problem":
+    "Plataforma multiusuario para la compra-venta de productos y administración de usuarios. ¿Porqué lo cree? Bueno, lo hice para una tutoria de tesis.",
+  "folio5.solution":
+    "De nuevo con el popular framework NextJS y las librerías: Material UI, Lottie y Frame Motion. Además, como backend utilice Firebase: Authentication, Storage y Firestore para alojar los usuarios, productos y pedidos.\r\nPor último, lo combine con el SSG para mejorar el performace de la página, proteger las rutas y las API routes.",
   seeGithub: "Ver en github",
+  seeWeb: "Visitar el sitio",
 
   seo_title_about: "Sobre mí",
   seo_description_about:

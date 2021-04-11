@@ -19,7 +19,7 @@ const Duck = () => {
         <ambientLight intensity={0.1} />
         <pointLight position={[40, 40, 20]} />
         <OrbitControls />
-        <Suspense fallback={<p>Cargando...</p>}>
+        <Suspense fallback={<>Cargando...</>}>
           <DuckModel />
         </Suspense>
       </Canvas>

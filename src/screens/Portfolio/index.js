@@ -35,8 +35,10 @@ const Portfolio = () => {
   const [index, setIndex] = useState(0);
   const { content } = useContent();
   const onClickButton = () =>
-    setIndex((bef) => (bef >= content.length ? 0 : (bef += 1)));
-  const enablePlay = values[index].play;
+    setIndex((bef) =>
+      bef >= Object.values(values).length - 1 ? 0 : (bef += 1)
+    );
+  const enablePlay = values[index]?.play;
   const { seoData } = useSEO({
     seo_key_description: "seo_description_folio",
     seo_key_title: "seo_title_folio",
@@ -58,7 +60,7 @@ const Portfolio = () => {
         >
           <PlayButton onClick={onClickButton}>
             <Typography fontSize={3} color="black">
-              {values[index].label}
+              {values[index]?.label}
             </Typography>
           </PlayButton>
           <Flex

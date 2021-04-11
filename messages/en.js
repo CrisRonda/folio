@@ -23,7 +23,7 @@ export default {
 
   "folio0.title": "Portfolio",
   "folio0.problem":
-    "TThis project shows my work to the world. Also, show my web application development skills.",
+    "This project shows my work to the world. Also, show my web application development skills.",
   "folio0.solution": `As you can see I used an interesting range of libraries like: ThreeJS for 3D animations and use of models within the browser. On the other hand, Framer Motion for CSS animations. \r\nAnd all this I joined to NextJS to improve the performance of my portfolio. Finally transform this project into a Progressive Web App, so go ahead and try all the functionalities that I have added! `,
 
   "folio4.title": "Dragon Ball API",
@@ -46,7 +46,13 @@ export default {
     "This project was a test to obtain the position of the device and calculate the distance traveled in a period of time.",
   "folio3.solution":
     "Use the React Native framework to create the necessary UI. To get the position of the device in the background use the library 'react-native-background-geolocation' because it has battery management.\r\nFinally, to save the data of each trace I used Redux to persist the data in the device memory. ",
+  "folio5.title": "Ecommerce App",
+  "folio5.problem":
+    "Multi-user platform for buying and selling products and user administration. Why did I create it? Well, because I did it for a university thesis tutoring",
+  "folio5.solution":
+    "Again with the popular framework, Next JS and libraries: Material UI, Lottie and frame motion. Additionally, I use Firebase as backend with services: Authentication, Storage and Firestore to save users, products and orders. \r\nUltimately, I combined with SSG to improve performance of web, protecte routes and API routes.",
   seeGithub: "See on github",
+  seeWeb: "Visit the site",
 
   seo_title_about: "About me",
   seo_description_about:

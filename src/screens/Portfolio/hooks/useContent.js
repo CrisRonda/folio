@@ -133,6 +133,32 @@ const useContent = () => {
         },
       ],
     },
+    {
+      id: 5,
+      title: f({ id: "folio5.title" }),
+      solution: f({ id: "folio5.solution" }),
+      problem: f({ id: "folio5.problem" }),
+      photo: "https://media.giphy.com/media/9AZUDiYmMdaRjr61hX/giphy.gif",
+      info: {
+        link:
+          "https://ecommerce-next-firebase-8a9d2ovt9-crisronda.vercel.app/verificando-cuenta",
+        label: f({ id: "seeWeb" }),
+        icon:
+          "https://res.cloudinary.com/dzh1db41l/image/upload/v1618098674/internet_ykcjwl.svg",
+      },
+      techs: [
+        {
+          alt: "NextJS",
+          img:
+            "https://res.cloudinary.com/dzh1db41l/image/upload/v1612651206/nextjs_d5xrj4.png",
+        },
+        {
+          alt: "Firebase",
+          img:
+            "https://res.cloudinary.com/dzh1db41l/image/upload/v1618097002/firebase-1_qmdmmr.svg",
+        },
+      ],
+    },
   ];
   return { content };
 };

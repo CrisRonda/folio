@@ -10,7 +10,7 @@ import {
 import { useIntl } from "react-intl";
 import SEO from "../../components/SEO";
 import useSEO from "../../hooks/useSEO";
-
+// import Duck from "../../Models/Duck";
 const Duck = dynamic(() => import("../../Models/Duck"), {
   ssr: false,
 });
