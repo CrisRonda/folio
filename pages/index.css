@@ -5,15 +5,18 @@ html {
 html,
 #__next,
 body {
-  display: flex;
+   display: flex;
+  flex-direction: column;
   flex: 1;
-  width: 100%;
   height: 100%;
-  padding: 0;
-  margin: 0 auto;
+  margin-bottom: 0;
   background-color: white !important;
 }
-
+#__next, main{
+  height: auto;
+  min-height: 100%;
+  position: relative;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,

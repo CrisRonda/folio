@@ -110,7 +110,6 @@ const Home = () => {
             </StaggerWrap>
           </Box>
         </Flex>
-        {/* <Flex justifyContent="center" style={{ overflowX: "hidden" }}> */}
         <GridTemplate>
           {data.map((item, key) =>
             item !== null ? (
@@ -124,7 +123,6 @@ const Home = () => {
             )
           )}
         </GridTemplate>
-        {/* </Flex> */}
       </ContainerTransition>
     </>
   );

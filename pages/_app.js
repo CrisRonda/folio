@@ -25,9 +25,9 @@ function MyApp({ Component, pageProps, router }) {
       <IntlProvider locale={locale} messages={messages[locale]}>
         <AnimatePresence>
           <AnimateSharedLayout type="crossfade">
-            <div style={{ width: "100% !important" }}>
+            <main style={{ width: "100% !important" }}>
               <Component {...pageProps} />
-            </div>
+            </main>
           </AnimateSharedLayout>
         </AnimatePresence>
       </IntlProvider>

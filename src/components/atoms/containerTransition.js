@@ -32,7 +32,6 @@ const Container = styled(Box)`
   position: relative;
   transition: all 1s ease-out;
   display: flex;
-  height: 100%;
   ${({ transition, initialColor, endColor }) =>
     transition
       ? css`
