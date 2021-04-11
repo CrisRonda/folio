@@ -23,7 +23,9 @@ const useSEO = ({ seo_key_title, seo_key_description, route, image }) => {
       },
       {
         property: "og:image",
-        content: image,
+        content:
+          image ||
+          "https://res.cloudinary.com/dzh1db41l/image/upload/v1616447391/Group_14_jbqgpd.png",
       },
       {
         property: "og:type",
@@ -43,7 +45,9 @@ const useSEO = ({ seo_key_title, seo_key_description, route, image }) => {
       },
       {
         property: "twitter:image",
-        content: image,
+        content:
+          image ||
+          "https://res.cloudinary.com/dzh1db41l/image/upload/v1616447391/Group_14_jbqgpd.png",
       },
     ],
   };

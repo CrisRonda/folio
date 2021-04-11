@@ -17,7 +17,6 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import SEO from "../../components/SEO";
-import useSEO from "../../hooks/useSEO";
 
 const MainHeading = styled(Typography)``;
 MainHeading.defaultProps = {
@@ -33,11 +32,7 @@ const Home = () => {
   const [data, setData] = useState(picsList);
   const { isSM } = useMediaQuery();
   const constraintsRef = useRef(null);
-  const { seoData } = useSEO({
-    seo_key_description: "seo_description_index",
-    seo_key_title: "seo_title_index",
-    route: "/",
-  });
+
   const config = {
     type: "spring",
     damping: 100,
@@ -55,7 +50,6 @@ const Home = () => {
 
   return (
     <>
-      <SEO {...seoData} />
       <ContainerTransition initialColor="black" endColor="white">
         <Flex
           flexDirection="column"
