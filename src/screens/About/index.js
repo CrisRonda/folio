@@ -44,6 +44,18 @@ const About = () => {
                 <Typography fontSize={6} py={2} fontWeight="bold">
                   {f({ id: "about.title" })}
                 </Typography>
+                <img
+                  src={process.env.NEXT_PUBLIC_PHOTO_URL}
+                  style={{
+                    minWidth: 250,
+                    minHeight: 250,
+                    width: "25vw",
+                    height: "25vw",
+                    borderRadius: "50%",
+                    marginBottom: 16,
+                    marginTop: 16,
+                  }}
+                />
               </FadeInUpBox>
               <FadeInUpBox yOffset={48} duration={3}>
                 <Typography

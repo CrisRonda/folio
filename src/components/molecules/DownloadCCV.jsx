@@ -1,10 +1,15 @@
+import { useRouter } from "next/router";
 import { useIntl } from "react-intl";
 import styled from "styled-components";
 const DownloadCCV = () => {
   const { formatMessage: f } = useIntl();
+  const router = useRouter();
+  const { locale } = router;
+  const isES = locale === "es";
+
   const onClick = () =>
     window.open(
-      "https://drive.google.com/file/d/112ZHoT4wste6NzFrrh5lf-mvpYIH4A_h/view?usp=sharing",
+      isES ? process.env.NEXT_PUBLIC_CCV_ES : process.env.NEXT_PUBLIC_CCV_EN,
       "_blank"
     );
 
