@@ -71,4 +71,5 @@ export default {
     "Cristian Ronda is an Ecuadorian developer of web, mobile and server applications. Also, he is a food lover. He is currently in Quito looking for work.",
   seo_title_404: "Not found",
   seo_description_404: "Page not found",
+  download_app: "Download my ",
 };

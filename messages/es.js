@@ -71,4 +71,5 @@ export default {
     "Cristian Ronda es un desarrollador ecuatoriano de aplicaciones web, móviles y de servidor. También, es amante de la comida. Actualmente se encuentra en Quito en busca de trabajo.",
   seo_title_404: "Página no encontrada",
   seo_description_404: "Página no encontrada",
+  download_app: "Descarga mi ",
 };

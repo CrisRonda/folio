@@ -27,9 +27,9 @@ const useWindowSize = () => {
 
 const useMediaQuery = () => {
   const { width } = useWindowSize();
-  const isXl = width >= breakpoints[4];
-  const isLg = width < breakpoints[4] && width >= breakpoints[3];
-  const isMd = width < breakpoints[3] && width >= breakpoints[2];
+  const isXl = width > breakpoints[4];
+  const isLg = width < breakpoints[4] || width >= breakpoints[3];
+  const isMd = width < breakpoints[3] || width >= breakpoints[2];
   const isSM = width < breakpoints[1];
   return { isXl, isLg, isMd, isSM };
 };

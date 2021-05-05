@@ -6,8 +6,12 @@ import {
   ScaleBox,
 } from "../../components";
 import { useIntl } from "react-intl";
+import Lottie from "react-lottie";
 import SEO from "../../components/SEO";
 import useSEO from "../../hooks/useSEO";
+import dataCLick from "../../lottie/click.json";
+import dataSocial from "../../lottie/social.json";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const network = [
   {
@@ -41,6 +45,22 @@ const network = [
   },
 ];
 
+const animationClick = {
+  loop: true,
+  autoplay: true,
+  animationData: dataCLick,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice",
+  },
+};
+const animationSocial = {
+  loop: false,
+  autoplay: true,
+  animationData: dataSocial,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice",
+  },
+};
 const Contact = () => {
   const { formatMessage: f } = useIntl();
   const calls = [
@@ -66,11 +86,13 @@ const Contact = () => {
       notOpen: true,
     },
   ];
+  const { isSM } = useMediaQuery();
   const { seoData } = useSEO({
     seo_key_description: "seo_description_contact",
     seo_key_title: "seo_title_contact",
     route: "/contact",
   });
+
   return (
     <>
       <SEO {...seoData} />
@@ -83,6 +105,7 @@ const Contact = () => {
             justifyItems: "center",
             width: "100%",
             overflow: "scroll",
+            flexDirection: "column",
           }}
         >
           <Flex
@@ -92,6 +115,40 @@ const Contact = () => {
             justifyContent="center"
             alignItems="center"
           >
+            <div style={{ position: "relative" }}>
+              <a
+                style={{
+                  color: "#839e2e",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                href={process.env.NEXT_PUBLIC_APK_FOLIO}
+                target="_blank"
+              >
+                <Typography
+                  my={[3, 4, 6]}
+                  lineHeight={[1, 2, 4]}
+                  fontSize={[3, 4, 6]}
+                >
+                  {f({ id: "download_app" })}
+                </Typography>
+                <Lottie
+                  options={animationClick}
+                  height={isSM ? 64 : 130}
+                  width={isSM ? 64 : 130}
+                  speed={0.3}
+                />
+                <Typography
+                  my={[3, 4, 6]}
+                  lineHeight={[1, 2, 4]}
+                  fontSize={[3, 4, 6]}
+                >
+                  app
+                </Typography>
+              </a>
+            </div>
             <Typography lineHeight={[1, 2, 4]} fontSize={[3, 4, 7]}>
               {f({ id: "contact.title" })}
             </Typography>
@@ -140,6 +197,19 @@ const Contact = () => {
               ))}
             </Flex>
           </Flex>
+          {!isSM && (
+            <Lottie
+              style={{
+                position: "absolute",
+                bottom: 64,
+                left: 64,
+              }}
+              options={animationSocial}
+              height={isSM ? 80 : 180}
+              width={isSM ? 80 : 180}
+              speed={0.5}
+            />
+          )}
         </div>
       </ContainerTransition>
     </>
